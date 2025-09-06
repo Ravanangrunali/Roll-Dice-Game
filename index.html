@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Roll Die App</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #a18cd1, #fbc2eb); /* soft gradient */
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Arial', sans-serif;
+    }
+    h1 {
+      color: white;
+      margin-bottom: 40px; /* space below title */
+      font-size: 28px;
+    }
+    img {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 25px; /* space below dice */
+    }
+    button {
+      padding: 12px 30px;
+      font-size: 18px;
+      border-radius: 25px; /* pill-shaped button */
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      margin-bottom: 30px; /* space below button */
+      transition: 0.2s;
+    }
+    button:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+    p {
+      margin-top: 10px;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Title at the top -->
+  <h1>Roll The Dice</h1>
+
+  <!-- Dice image -->
+  <img id="die" src="d1.png" alt="Die face">
+
+  <!-- Button below dice -->
+  <button onclick="rollDie()">Roll Dice</button>
+
+  <!-- Result text -->
+  <p id="result"></p>
+
+  <script>
+    function rollDie() {
+      var roll = Math.floor(Math.random() * 6) + 1;
+      document.getElementById("die").src = "d" + roll + ".png";
+      document.getElementById("result").innerHTML = "You rolled a " + roll + "!";
+    }
+  </script>
+</body>
+</html>
